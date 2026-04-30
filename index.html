@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>ระบบ開立帳單店鋪อาหาร</title>
+<title>開立帳單店鋪</title>
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Prompt:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -404,11 +404,11 @@
     <span>➕</span> 新增菜單
   </div>
   <div style="margin-bottom:14px">
-    <div class="input-label">จัดการ分類</div>
+    <div class="input-label">管理分類</div>
     <div id="categoryManageList" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px"></div>
     <div style="display:flex;gap:8px">
-      <input type="text" class="inp" id="newCatInput" placeholder="ชื่อ分類ใหม่" style="flex:1">
-      <div class="btn btn-secondary" onclick="addCategory()" style="width:auto;padding:10px 14px;font-size:13px">เพิ่ม</div>
+      <input type="text" class="inp" id="newCatInput" placeholder="名稱分類" style="flex:1">
+      <div class="btn btn-secondary" onclick="addCategory()" style="width:auto;padding:10px 14px;font-size:13px">新增</div>
     </div>
   </div>
   <div id="manageMenuList"></div>
@@ -418,7 +418,7 @@
   <div class="section-title"><span>🏪</span> 店鋪設定</div>
   <div class="card">
     <div class="input-row">
-      <div class="input-label">โลโก้店鋪 (emoji)</div>
+      <div class="input-label">店鋪 (emoji)</div>
       <input type="text" class="inp" id="settingLogo" placeholder="🍜" maxlength="4" oninput="saveSettings()">
     </div>
     <div class="input-row">
@@ -426,33 +426,33 @@
       <input type="text" class="inp" id="settingShopName" placeholder="我的餐廳" oninput="saveSettings()">
     </div>
     <div class="input-row">
-      <div class="input-label">ข้อความท้ายบิล</div>
-      <input type="text" class="inp" id="settingTagline" placeholder="感謝您的光臨ค่ะ 🙏" oninput="saveSettings()">
+      <div class="input-label"></div>
+      <input type="text" class="inp" id="settingTagline" placeholder="感謝您的光臨 🙏" oninput="saveSettings()">
     </div>
     <div class="input-row">
       <div class="input-label">電話 / LINE</div>
       <input type="text" class="inp" id="settingPhone" placeholder="082-xxx-xxxx" oninput="saveSettings()">
     </div>
     <div class="input-row" style="margin-bottom:0">
-      <div class="input-label">地址 (ไม่บังคับ)</div>
+      <div class="input-label">地址 ()</div>
       <input type="text" class="inp" id="settingAddress" placeholder="地址" oninput="saveSettings()">
     </div>
   </div>
 
   <div class="card" style="margin-top:4px">
-    <div style="font-size:14px;font-weight:600;margin-bottom:10px;font-family:'Prompt',sans-serif">📊 สรุปยอด</div>
+    <div style="font-size:14px;font-weight:600;margin-bottom:10px;font-family:'Prompt',sans-serif">📊 </div>
     <div class="summary-row">
-      <span style="color:var(--text2)">訂單ทั้งหมด</span>
+      <span style="color:var(--text2)">訂單全部</span>
       <span id="totalOrdersInfo" style="font-weight:700">0 品項</span>
     </div>
     <div class="summary-row">
-      <span style="color:var(--text2)">ยอดรวมทั้งหมด</span>
+      <span style="color:var(--text2)">小計全部</span>
       <span id="totalRevenueInfo" style="font-weight:700;color:var(--accent)">NT$0</span>
     </div>
   </div>
 
   <div class="btn btn-danger" onclick="confirmClearHistory()" style="margin-top:8px">
-    🗑️ ล้าง訂單紀錄ทั้งหมด
+    🗑️ 清除訂單紀錄全部
   </div>
 </div>
 
@@ -504,7 +504,7 @@
   <div class="modal">
     <div class="modal-title" id="menuModalTitle">➕ 新增菜單</div>
     <div class="input-row">
-      <div class="input-label">Emoji ไอคอน</div>
+      <div class="input-label">Emoji </div>
       <input type="text" class="inp" id="menuEmoji" placeholder="🍜" maxlength="4">
     </div>
     <div class="input-row">
@@ -512,7 +512,7 @@
       <input type="text" class="inp" id="menuName" placeholder="菜單名稱">
     </div>
     <div class="input-row">
-      <div class="input-label">價格 (บาท) *</div>
+      <div class="input-label">價格 () *</div>
       <input type="number" class="inp" id="menuPrice" placeholder="0" min="0">
     </div>
     <div class="input-row">
@@ -533,7 +533,7 @@
     <div class="modal-title">🧾 訂單帳單</div>
     <div id="billContent"></div>
     <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
-      <div class="btn btn-success" onclick="saveBillAsImage()" style="flex:1">📥 儲存เป็นรูป</div>
+      <div class="btn btn-success" onclick="saveBillAsImage()" style="flex:1">📥 儲存</div>
       <div class="btn btn-secondary" onclick="closeBillModal()" style="flex:1">關閉</div>
     </div>
   </div>
@@ -542,10 +542,10 @@
 <!-- ===== ORDER DETAIL MODAL ===== -->
 <div class="modal-overlay" id="orderDetailModal">
   <div class="modal" style="max-height:90vh;overflow-y:auto">
-    <div class="modal-title">📋 รายละเอียด訂單</div>
+    <div class="modal-title">📋 訂單</div>
     <div id="orderDetailContent"></div>
     <div style="margin-top:14px;display:flex;gap:8px">
-      <div class="btn btn-success" onclick="reGenerateBill()" style="flex:1">🧾 ดูบิลอีกครั้ง</div>
+      <div class="btn btn-success" onclick="reGenerateBill()" style="flex:1">🧾 </div>
       <div class="btn btn-secondary" onclick="closeOrderDetail()" style="flex:1">關閉</div>
     </div>
   </div>
@@ -558,18 +558,18 @@
 // ===== STATE =====
 let state = {
   menus: [],
-  categories: ['ทั้งหมด'],
+  categories: ['全部'],
   cart: {},
   orders: [],
   settings: {
     logo: '🍜',
     shopName: '我的餐廳',
-    tagline: '感謝您的光臨ค่ะ 🙏',
+    tagline: '感謝您的光臨 🙏',
     phone: '',
     address: ''
   },
   orderCounter: 1,
-  activeCategory: 'ทั้งหมด',
+  activeCategory: '全部',
   viewingOrderId: null
 };
 
@@ -580,7 +580,7 @@ function load() {
     if (s) {
       const parsed = JSON.parse(s);
       state = { ...state, ...parsed };
-      if (!state.categories.includes('ทั้งหมด')) state.categories.unshift('ทั้งหมด');
+      if (!state.categories.includes('全部')) state.categories.unshift('全部');
     }
   } catch(e) {}
 }
@@ -591,16 +591,16 @@ function save() {
 // ===== DEFAULT DATA =====
 function initDefaults() {
   if (state.menus.length === 0) {
-    state.categories = ['ทั้งหมด','อาหารจานเดียว','เส้น','ของทอด','เครื่องดื่ม'];
+    state.categories = ['全部','主餐','麵類','炸物','飲料'];
     state.menus = [
-      { id: 1, emoji: '🍛', name: 'ข้าวหมูแดง', price: 50, category: 'อาหารจานเดียว' },
-      { id: 2, emoji: '🍚', name: 'ข้าวไข่เจียว', price: 45, category: 'อาหารจานเดียว' },
-      { id: 3, emoji: '🍜', name: 'ก๋วยเตี๋ยวหมู', price: 55, category: 'เส้น' },
-      { id: 4, emoji: '🍝', name: 'บะหมี่หมูแดง', price: 55, category: 'เส้น' },
-      { id: 5, emoji: '🍗', name: 'ไก่ทอด', price: 40, category: 'ของทอด' },
-      { id: 6, emoji: '🥟', name: 'ปอเปี๊ยะทอด', price: 35, category: 'ของทอด' },
-      { id: 7, emoji: '🧋', name: 'ชาไข่มุก', price: 45, category: 'เครื่องดื่ม' },
-      { id: 8, emoji: '🥤', name: 'น้ำส้ม', price: 25, category: 'เครื่องดื่ม' },
+      { id: 1, emoji: '🍛', name: '', price: 50, category: '主餐' },
+      { id: 2, emoji: '🍚', name: '', price: 45, category: '主餐' },
+      { id: 3, emoji: '🍜', name: '', price: 55, category: '麵類' },
+      { id: 4, emoji: '🍝', name: '', price: 55, category: '麵類' },
+      { id: 5, emoji: '🍗', name: '', price: 40, category: '炸物' },
+      { id: 6, emoji: '🥟', name: '', price: 35, category: '炸物' },
+      { id: 7, emoji: '🧋', name: '', price: 45, category: '飲料' },
+      { id: 8, emoji: '🥤', name: '', price: 25, category: '飲料' },
     ];
     state.orderCounter = 1;
     save();
@@ -637,7 +637,7 @@ function renderMenuGrid() {
   const q = document.getElementById('menuSearch').value.toLowerCase();
   const grid = document.getElementById('menuGrid');
   let items = state.menus;
-  if (state.activeCategory !== 'ทั้งหมด') items = items.filter(m => m.category === state.activeCategory);
+  if (state.activeCategory !== '全部') items = items.filter(m => m.category === state.activeCategory);
   if (q) items = items.filter(m => m.name.toLowerCase().includes(q));
   if (items.length === 0) {
     grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">🔍</div><div class="empty-text">找不到菜單</div></div>`;
@@ -687,7 +687,7 @@ function closeCart() {
 function renderCartItems() {
   const container = document.getElementById('cartItems');
   const entries = Object.entries(state.cart).filter(([,q]) => q > 0);
-  if (entries.length === 0) { container.innerHTML = '<div class="empty-state"><div class="empty-icon">🛒</div><div class="empty-text">ตะกร้าว่าง</div></div>'; return; }
+  if (entries.length === 0) { container.innerHTML = '<div class="empty-state"><div class="empty-icon">🛒</div><div class="empty-text">購物車是空的</div></div>'; return; }
   container.innerHTML = entries.map(([id, qty]) => {
     const m = state.menus.find(x => x.id == id);
     if (!m) return '';
@@ -695,7 +695,7 @@ function renderCartItems() {
       <div class="cart-emoji">${m.emoji || '🍽️'}</div>
       <div class="cart-info">
         <div class="cart-name">${m.name}</div>
-        <div class="cart-price-unit">NT$${m.price} / ชิ้น</div>
+        <div class="cart-price-unit">NT$${m.price} / 份</div>
       </div>
       <div class="qty-control">
         <div class="qty-btn" onclick="changeQty(${id}, -1)">−</div>
@@ -724,15 +724,15 @@ function updateCartSummary() {
   const total = Math.max(0, subtotal - discount);
   const container = document.getElementById('cartSummary');
   container.innerHTML = `
-    <div class="summary-row"><span style="color:var(--text2)">ยอดรวม</span><span style="font-weight:600">NT$${subtotal}</span></div>
-    ${discount > 0 ? `<div class="summary-row"><span style="color:var(--text2)">ส่วนลด</span><span class="discount-val">- NT$${discount}</span></div>` : ''}
-    <div class="summary-row total"><span>💰 ยอดชำระ</span><span>NT$${total}</span></div>
+    <div class="summary-row"><span style="color:var(--text2)">小計</span><span style="font-weight:600">NT$${subtotal}</span></div>
+    ${discount > 0 ? `<div class="summary-row"><span style="color:var(--text2)">折扣</span><span class="discount-val">- NT$${discount}</span></div>` : ''}
+    <div class="summary-row total"><span>💰 總金額</span><span>NT$${total}</span></div>
   `;
 }
 
 // ===== BILL =====
 function generateBill() {
-  const customer = document.getElementById('customerName').value.trim() || 'ลูกค้า';
+  const customer = document.getElementById('customerName').value.trim() || '客戶';
   const discount = parseFloat(document.getElementById('discountInput').value || 0) || 0;
   const note = document.getElementById('orderNote').value.trim();
   const items = Object.entries(state.cart).filter(([,q]) => q>0).map(([id,qty]) => {
@@ -793,10 +793,10 @@ function buildBillHTML(order) {
       </div>`).join('')}
     </div>
     <div class="bill-totals">
-      <div class="bill-total-row"><span>ยอดรวม</span><span>NT$${order.subtotal}</span></div>
-      ${order.discount > 0 ? `<div class="bill-total-row" style="color:#22c55e"><span>ส่วนลด</span><span>- NT$${order.discount}</span></div>` : ''}
+      <div class="bill-total-row"><span>小計</span><span>NT$${order.subtotal}</span></div>
+      ${order.discount > 0 ? `<div class="bill-total-row" style="color:#22c55e"><span>折扣</span><span>- NT$${order.discount}</span></div>` : ''}
       <div class="bill-total-row bill-grand" style="margin-top:6px">
-        <span>💰 ยอดชำระ</span>
+        <span>💰 總金額</span>
         <span class="bill-grand-val">NT$${order.total}</span>
       </div>
     </div>
@@ -816,14 +816,14 @@ function closeBillModal() {
 async function saveBillAsImage() {
   const el = document.getElementById('billToPrint');
   if (!el) return;
-  showToast('กำลังสร้างรูป...');
+  showToast('正在產生圖片...');
   try {
     const canvas = await html2canvas(el, { backgroundColor: '#ffffff', scale: 2, useCORS: true });
     const link = document.createElement('a');
     link.download = 'bill_' + Date.now() + '.png';
     link.href = canvas.toDataURL('image/png');
     link.click();
-    showToast('儲存รูป已完成 ✓');
+    showToast('儲存已完成 ✓');
   } catch(e) {
     showToast('發生錯誤，請再試一次');
   }
@@ -839,14 +839,14 @@ function renderHistory() {
   });
   const todayRev = todayOrders.reduce((s,o) => s + o.total, 0);
   document.getElementById('statsGrid').innerHTML = `
-    <div class="stat-card"><div class="stat-val">${state.orders.length}</div><div class="stat-label">訂單ทั้งหมด</div></div>
-    <div class="stat-card"><div class="stat-val" style="font-size:18px">NT$${subtotals.toLocaleString()}</div><div class="stat-label">ยอดรวมทั้งหมด</div></div>
-    <div class="stat-card"><div class="stat-val">${todayOrders.length}</div><div class="stat-label">วันนี้</div></div>
-    <div class="stat-card"><div class="stat-val" style="font-size:18px">NT$${todayRev.toLocaleString()}</div><div class="stat-label">รายได้วันนี้</div></div>
+    <div class="stat-card"><div class="stat-val">${state.orders.length}</div><div class="stat-label">訂單全部</div></div>
+    <div class="stat-card"><div class="stat-val" style="font-size:18px">NT$${subtotals.toLocaleString()}</div><div class="stat-label">小計全部</div></div>
+    <div class="stat-card"><div class="stat-val">${todayOrders.length}</div><div class="stat-label">今天</div></div>
+    <div class="stat-card"><div class="stat-val" style="font-size:18px">NT$${todayRev.toLocaleString()}</div><div class="stat-label">今天</div></div>
   `;
   const list = document.getElementById('historyList');
   if (state.orders.length === 0) {
-    list.innerHTML = '<div class="empty-state"><div class="empty-icon">📋</div><div class="empty-text">ยังไม่มี訂單紀錄</div></div>';
+    list.innerHTML = '<div class="empty-state"><div class="empty-icon">📋</div><div class="empty-text">訂單紀錄</div></div>';
     return;
   }
   list.innerHTML = state.orders.map(o => `
@@ -888,7 +888,7 @@ function renderManage() {
   renderCategoryManage();
   const list = document.getElementById('manageMenuList');
   if (state.menus.length === 0) {
-    list.innerHTML = '<div class="empty-state"><div class="empty-icon">🍽️</div><div class="empty-text">ยังไม่มี菜單 กด新增菜單</div></div>';
+    list.innerHTML = '<div class="empty-state"><div class="empty-icon">🍽️</div><div class="empty-text">菜單 新增菜單</div></div>';
     return;
   }
   list.innerHTML = state.menus.map(m => `
@@ -909,7 +909,7 @@ function renderManage() {
 
 function renderCategoryManage() {
   const container = document.getElementById('categoryManageList');
-  const cats = state.categories.filter(c => c !== 'ทั้งหมด');
+  const cats = state.categories.filter(c => c !== '全部');
   container.innerHTML = cats.map(c =>
     `<div style="display:flex;align-items:center;gap:4px;background:var(--surface2);border:1px solid var(--border2);border-radius:6px;padding:4px 10px">
       <span style="font-size:13px">${c}</span>
@@ -921,19 +921,19 @@ function renderCategoryManage() {
 function addCategory() {
   const val = document.getElementById('newCatInput').value.trim();
   if (!val) return;
-  if (state.categories.includes(val)) { showToast('分類นี้มีอยู่แล้ว'); return; }
+  if (state.categories.includes(val)) { showToast('分類'); return; }
   state.categories.push(val);
   save();
   document.getElementById('newCatInput').value = '';
   renderManage();
   renderCategoryChips();
-  showToast(`เพิ่ม分類 "${val}" แล้ว`);
+  showToast(`新增分類 "${val}" `);
 }
 
 function deleteCategory(cat) {
   if (!confirm(`刪除分類 "${cat}"?`)) return;
   state.categories = state.categories.filter(c => c !== cat);
-  state.menus.forEach(m => { if (m.category === cat) m.category = 'ทั่วไป'; });
+  state.menus.forEach(m => { if (m.category === cat) m.category = ''; });
   save();
   renderManage();
   renderCategoryChips();
@@ -961,7 +961,7 @@ function openEditMenu(id) {
 }
 function populateCategorySelect(selected = '') {
   const sel = document.getElementById('menuCategory');
-  const cats = state.categories.filter(c => c !== 'ทั้งหมด');
+  const cats = state.categories.filter(c => c !== '全部');
   sel.innerHTML = cats.map(c => `<option value="${c}" ${c===selected?'selected':''}>${c}</option>`).join('');
 }
 function closeMenuModal() { document.getElementById('menuModal').classList.remove('show'); }
@@ -971,8 +971,8 @@ function saveMenu() {
   const emoji = document.getElementById('menuEmoji').value.trim() || '🍽️';
   const category = document.getElementById('menuCategory').value;
   const editId = document.getElementById('menuEditId').value;
-  if (!name) { showToast('กรุณาใส่菜單名稱'); return; }
-  if (isNaN(price) || price < 0) { showToast('กรุณาใส่價格'); return; }
+  if (!name) { showToast('請輸入菜單名稱'); return; }
+  if (isNaN(price) || price < 0) { showToast('請輸入價格'); return; }
   if (editId) {
     const m = state.menus.find(x => x.id == editId);
     if (m) { m.name = name; m.price = price; m.emoji = emoji; m.category = category; }
@@ -984,16 +984,16 @@ function saveMenu() {
   closeMenuModal();
   renderManage();
   renderMenuGrid();
-  showToast(editId ? '編輯菜單แล้ว ✓' : 'เพิ่ม菜單แล้ว ✓');
+  showToast(editId ? '編輯菜單 ✓' : '新增菜單 ✓');
 }
 function deleteMenu(id) {
-  if (!confirm('刪除菜單นี้?')) return;
+  if (!confirm('刪除菜單?')) return;
   state.menus = state.menus.filter(m => m.id !== id);
   if (state.cart[id]) { delete state.cart[id]; updateCartBadge(); }
   save();
   renderManage();
   renderMenuGrid();
-  showToast('刪除菜單แล้ว');
+  showToast('刪除菜單');
 }
 
 // ===== SETTINGS =====
@@ -1019,12 +1019,12 @@ function saveSettings() {
   save();
 }
 function confirmClearHistory() {
-  if (!confirm('ล้าง訂單紀錄ทั้งหมด? ไม่สามารถกู้คืนได้')) return;
+  if (!confirm('清除訂單紀錄全部? ')) return;
   state.orders = [];
   state.orderCounter = 1;
   save();
   renderSettings();
-  showToast('ล้าง紀錄แล้ว');
+  showToast('清除紀錄');
 }
 
 // ===== TOAST =====
