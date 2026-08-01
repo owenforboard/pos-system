@@ -771,7 +771,7 @@ const DEFAULT_URL = 'https://script.google.com/macros/s/AKfycbwB6VqbxTC1I2hXt4QO
 // แจ้ง LINE Bot (Cloudflare Worker) ตอนบันทึกบิลของออร์เดอร์ออนไลน์เสร็จ (มีส่วนลด/แก้ไขรายการจริงแล้ว)
 // ให้ Worker ส่งใบเสร็จ Flex Message ที่ถูกต้องให้ลูกค้าทาง LINE
 // TODO: แก้ 2 ค่านี้เป็นของจริงจากพี่โอเว่น (URL ของ Worker + NOTIFY_TOKEN ที่ตั้งไว้ใน Cloudflare Secrets)
-const LINEBOT_NOTIFY_URL = 'https://line-chatbot.YOUR-SUBDOMAIN.workers.dev/notify-final-receipt';
+const LINEBOT_NOTIFY_URL = 'https://line-chatbot.o-prathan.workers.dev/notify-final-receipt';
 const LINEBOT_NOTIFY_TOKEN = 'YOUR-NOTIFY-TOKEN-HERE';
 
 // เรียกแจ้ง LINE Bot แบบ fire-and-forget (ไม่บล็อกการทำงานของแอปถ้าเรียกไม่สำเร็จ)
